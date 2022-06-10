@@ -1,0 +1,17 @@
+<div class="col-sm-6">
+    <div class="card mt-3" style="width: 200%;">
+      <div class="card-body">
+        <h5 class="card-title">{{todo.title}}</h5>
+        <p class="card-text">{{todo.desc}}</p>
+        <p class="card-text">
+            <b class="text-primary">Due Date : </b><br>
+            <b class="text-primary">Last updated : </b>  
+        </p>
+      
+        <a (click)="onClickDelete(todo)" class="btn btn-danger card-link">Delete</a>
+        <a (click)="onClickDelete(todo)" class="btn btn-primary card-link">Update</a>
+        <a (click)="onClickDelete(todo)" class="btn btn-success card-link">Mark Complete</a>
+     
+      </div>
+    </div>
+</div>
