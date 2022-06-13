@@ -1,4 +1,13 @@
-
 <div class="container">
-  <app-todos></app-todos>
+    <h1 class="mt-3">My Todos</h1>
+    <div class="row">
+        <div class="col-4">
+            <a routerLink="/addtodo" class="btn btn-light mt-5">Add a Task</a><br>
+            <a routerLink="/" class="btn btn-light mt-4">My Tasks</a><br>
+            <a routerLink="/comptodo" class="btn btn-light mt-4">Completed Tasks</a>
+        </div>
+        <div class="col-8">        
+            <router-outlet></router-outlet>
+        </div>
+    </div>
 </div>

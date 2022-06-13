@@ -1,8 +1,8 @@
 export class Todo
 {
-    sno!: number
     title!: string
     desc!: string
+    dueDate!: Date
+    curDate!: Date
     active!: boolean
 }
-

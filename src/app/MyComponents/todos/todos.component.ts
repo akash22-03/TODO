@@ -9,28 +9,32 @@ import { Todo } from "../../Todo";
 export class TodosComponent implements OnInit {
 
   todos:Todo[];
+  
   constructor() { 
     this.todos = [
       {
-        sno:1,
         title:"Title 1",
         desc:"Desc 1",
-        active:true
+        active:true,
+        dueDate: new Date(),
+        curDate: new Date()
       },
       {
-        sno:2,
         title:"Title 2",
         desc:"Desc 2",
         active:true,
+        dueDate: new Date(),
+        curDate: new Date()
       },
       {
-        sno:3,
         title:"Title 3",
         desc:"Desc 3",
         active:true,
+        dueDate: new Date(),
+        curDate: new Date()
       }
-    ]
-
+    ];
+    
   }
 
 
