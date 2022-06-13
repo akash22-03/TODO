@@ -14,28 +14,26 @@ export class CompTodoComponent implements OnInit {
       {
         title:"CCTitle 1",
         desc:"CCDesc 1",
-        active:true,
+        active:false,
         dueDate: new Date(),
         curDate: new Date()
       },
       {
         title:"CCTitle 2",
         desc:"CCDesc 2",
-        active:true,
+        active:false,
         dueDate: new Date(),
         curDate: new Date()
       },
       {
         title:"CCTitle 3",
         desc:"CCDesc 3",
-        active:true,
+        active:false,
         dueDate: new Date(),
         curDate: new Date()
       }
     ];
    }
-  
-  
   
   ngOnInit(): void {
   }

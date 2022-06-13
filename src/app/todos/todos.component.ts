@@ -46,5 +46,13 @@ export class TodosComponent implements OnInit {
     const index = this.todos.indexOf(todo);
     this.todos.splice(index,1);
   }
-  
+  completeTodo(todo:Todo){
+    var el = this.todos.find(function (element) {
+      return element = todo;
+    });
+    const index = this.todos.indexOf(todo);
+    this.todos.splice(index,1);
+    //Shared Service Concept
+    //Breaking here
+  }
 }

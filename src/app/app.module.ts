@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { TodosComponent } from './todos/todos.component';
 import { TodoItemComponent } from './todo-item/todo-item.component';
 import { AddTodoComponent } from './add-todo/add-todo.component';
-import { CompTodoComponent } from './comp-todo/comp-todo.component';
+import { CompTodoComponent } from './comp-todos/comp-todo.component';
 import { CompTodoItemComponent } from './comp-todo-item/comp-todo-item.component';
 
 @NgModule({
