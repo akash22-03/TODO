@@ -3,11 +3,11 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { TodosComponent } from './MyComponents/todos/todos.component';
-import { TodoItemComponent } from './MyComponents/todo-item/todo-item.component';
-import { AddTodoComponent } from './MyComponents/add-todo/add-todo.component';
-import { CompTodoComponent } from './MyComponents/comp-todo/comp-todo.component';
-import { CompTodoItemComponent } from './MyComponents/comp-todo-item/comp-todo-item.component';
+import { TodosComponent } from './todos/todos.component';
+import { TodoItemComponent } from './todo-item/todo-item.component';
+import { AddTodoComponent } from './add-todo/add-todo.component';
+import { CompTodoComponent } from './comp-todo/comp-todo.component';
+import { CompTodoItemComponent } from './comp-todo-item/comp-todo-item.component';
 
 @NgModule({
   declarations: [
