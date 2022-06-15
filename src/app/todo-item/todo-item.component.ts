@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Todo } from 'src/app/Todo';
+import { LocalStorageService } from '../local-storage.service';
 
 @Component({
   selector: 'app-todo-item',
@@ -9,23 +10,27 @@ import { Todo } from 'src/app/Todo';
 export class TodoItemComponent implements OnInit {
 
   @Input() todo!: Todo;
-  @Output() todoDelete: EventEmitter<Todo> = new EventEmitter();
-  @Output() todoComp: EventEmitter<Todo> = new EventEmitter();
 
-  constructor() { }
+  constructor(public LocalStorage:LocalStorageService) { 
+
+  }
 
   ngOnInit(): void {
   }
-  onClickDelete(todo:Todo){
-    this.todoDelete.emit(todo);
-    console.log("Function to complete")
-    //we need to change array of todo
-    //so we need to use eventemmiter 
+
+  delete(){
+    this.LocalStorage.delete(`${this.todo.title}`).then(res=>{
+      if(res){
+        console.log("deleted")
+      }
+    })
   }
-  onClickComp(todo:Todo){
-    this.todoComp.emit(todo);
-    console.log("Function to complete")
-    //we need to change array of todo
-    //so we need to use eventemmiter 
+  complete(){
+    this.todo.active=false;
+    this.LocalStorage.add(this.todo).then(res=>{
+      if(res){
+        console.log("updated")
+      }
+    })
   }
 }

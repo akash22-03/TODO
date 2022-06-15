@@ -4,13 +4,12 @@
       <h5 class="card-title">{{todo.title}}</h5>
       <p class="card-text">{{todo.desc}}</p>
       <p class="card-text">
-          <b class="text-primary">Due Date : {{todo.dueDate}}</b><br>
-          <b class="text-primary">Last updated : {{todo.curDate}}</b>  
+          <b class="text-primary">Due Date : {{todo.dueDate.toLocaleString()}}</b><br>
+          <b class="text-primary">Last updated : {{todo.curDate.toLocaleString()}}</b>  
       </p>
-    
-      <a (click)="onClickDelete(todo)" class="btn btn-danger card-link">Delete</a>
-      <a (click)="onClickDelete(todo)" class="btn btn-primary card-link">Update</a>
-      <a (click)="onClickComp(todo)" class="btn btn-success card-link">Mark Complete</a>
+      <a (click)="delete()" class="btn btn-danger card-link">Delete</a>
+      <!--a class="btn btn-primary card-link">Update</a-->
+      <a (click)="complete()" class="btn btn-success card-link">Mark Complete</a>
    
     </div>
   </div>

@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Todo } from "../Todo";
+import { LocalStorageService } from '../local-storage.service';
 
 @Component({
   selector: 'app-comp-todo',
@@ -9,30 +10,9 @@ import { Todo } from "../Todo";
 export class CompTodoComponent implements OnInit {
 
   ctodos:Todo[];
-  constructor() {
-    this.ctodos = [
-      {
-        title:"CCTitle 1",
-        desc:"CCDesc 1",
-        active:false,
-        dueDate: new Date(),
-        curDate: new Date()
-      },
-      {
-        title:"CCTitle 2",
-        desc:"CCDesc 2",
-        active:false,
-        dueDate: new Date(),
-        curDate: new Date()
-      },
-      {
-        title:"CCTitle 3",
-        desc:"CCDesc 3",
-        active:false,
-        dueDate: new Date(),
-        curDate: new Date()
-      }
-    ];
+  constructor( public LocalStorage:LocalStorageService) {
+    this.ctodos = this.LocalStorage.viewCompData();
+    console.log(this.ctodos)
    }
   
   ngOnInit(): void {
