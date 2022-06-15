@@ -26,10 +26,7 @@ export class AddTodoComponent implements OnInit {
     }
     console.log((<HTMLInputElement>document.getElementById("dueDate")).value)
     console.log(todo)
-    this.LocalStorage.add(todo).then(res=>{
-      if(res){
-        alert("inserted successfully")
-      }
-    });
+    this.LocalStorage.add(todo)
+    window.location.replace("/");
   }
 }

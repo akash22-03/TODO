@@ -29,27 +29,6 @@ const todos = [
       active:true,
       dueDate: new Date(),
       curDate: new Date()
-    },
-    {
-      title:"Title 4",
-      desc:"Desc 4",
-      active:true,
-      dueDate: new Date(),
-      curDate: new Date()
-    },
-    {
-      title:"Title 5",
-      desc:"Desc 5",
-      active:true,
-      dueDate: new Date(),
-      curDate: new Date()
-    },
-    {
-      title:"Title 6",
-      desc:"Desc 6",
-      active:true,
-      dueDate: new Date(),
-      curDate: new Date()
     }
   ];
 
@@ -58,7 +37,7 @@ const request = window.indexedDB.open("todoDB",1);
 
 request.onupgradeneeded = e => {
     db = e.target.result;
-    const objectStore = db.createObjectStore("todo_notes",{ keyPath: "title" });
+    const objectStore = db.createObjectStore("todo_notes",{keyPath:"title"});
     objectStore.transaction.oncomplete = event => {
         var todoObjectStore = db.transaction("todo_notes", "readwrite").objectStore("todo_notes");
         todos.forEach(function(todo) {

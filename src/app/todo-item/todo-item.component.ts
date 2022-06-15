@@ -19,18 +19,10 @@ export class TodoItemComponent implements OnInit {
   }
 
   delete(){
-    this.LocalStorage.delete(`${this.todo.title}`).then(res=>{
-      if(res){
-        console.log("deleted")
-      }
-    })
+    this.LocalStorage.delete(`${this.todo.title}`)
   }
   complete(){
     this.todo.active=false;
-    this.LocalStorage.add(this.todo).then(res=>{
-      if(res){
-        console.log("updated")
-      }
-    })
+    this.LocalStorage.add(this.todo)
   }
 }

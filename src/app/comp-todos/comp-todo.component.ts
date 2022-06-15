@@ -9,10 +9,16 @@ import { LocalStorageService } from '../local-storage.service';
 })
 export class CompTodoComponent implements OnInit {
 
+  mytodos:Todo[];
   ctodos:Todo[];
   constructor( public LocalStorage:LocalStorageService) {
-    this.ctodos = this.LocalStorage.viewCompData();
-    console.log(this.ctodos)
+    this.mytodos = []
+    this.ctodos = []
+
+    this.LocalStorage.viewData(this.mytodos).then(res=>{
+      this.ctodos = this.mytodos.filter(todo => todo.active!=true);
+    })
+    
    }
   
   ngOnInit(): void {
